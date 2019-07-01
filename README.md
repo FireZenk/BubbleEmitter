@@ -1,4 +1,4 @@
-# BubbleEmitter [![](https://jitpack.io/v/FireZenk/BubbleEmitter.svg)](https://jitpack.io/#FireZenk/BubbleEmitter)
+# BubbleEmitter [![](https://jitpack.io/v/FireZenk/BubbleEmitter.svg)](https://jitpack.io/#FireZenk/BubbleEmitter) <a href="https://android-arsenal.com/api?level=16"><img src="https://img.shields.io/badge/API-19%2B-orange.svg?style=flat" alt="api"></a>
 
 Shows fancy animated bubbles as an Android view
 
