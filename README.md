@@ -41,6 +41,16 @@ Start emitting bubbles!
 bubbleEmitter.emitBubble(size)
 ```
 
+### CUSTOMIZATION
+
+```kotlin
+fun setColors(@ColorInt stroke: Int, @ColorInt fill: Int, @ColorInt gloss: Int)
+
+fun setColorResources(@ColorRes stroke: Int, @ColorRes fill: Int, @ColorRes gloss: Int
+
+fun setEmissionDelay(delayMillis: Long)
+```
+
 More customizations to come!
 
 ### MORE INFO
