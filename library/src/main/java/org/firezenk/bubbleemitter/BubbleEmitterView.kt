@@ -3,11 +3,14 @@ package org.firezenk.bubbleemitter
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color.rgb
 import android.graphics.Paint
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.core.animation.doOnEnd
 import androidx.core.content.ContextCompat
 import java.util.UUID
@@ -90,6 +93,22 @@ class BubbleEmitterView @JvmOverloads constructor(context: Context, attrs: Attri
         }, 10L * bubbles.size)
 
         invalidate()
+    }
+
+    fun setColors(@ColorInt stroke: Int = rgb(249,249,249),
+                  @ColorInt fill: Int = rgb(236,236,236),
+                  @ColorInt gloss: Int = rgb(255,255,255)) {
+        paintStroke.color = stroke
+        paintFill.color = fill
+        paintGloss.color = gloss
+    }
+
+    fun setColorResources(@ColorRes stroke: Int = R.color.ghostWhite,
+                          @ColorRes fill: Int = R.color.whiteSmoke,
+                          @ColorRes gloss: Int = android.R.color.white) {
+        paintStroke.color = ContextCompat.getColor(context, stroke)
+        paintFill.color = ContextCompat.getColor(context, fill)
+        paintGloss.color = ContextCompat.getColor(context, gloss)
     }
 
     private fun moveAnimation(uuid: UUID, radius: Float): ValueAnimator {
