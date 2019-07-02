@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color.rgb
 import android.graphics.Paint
-import android.icu.util.TimeUnit
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
@@ -33,7 +32,8 @@ class BubbleEmitterView @JvmOverloads constructor(context: Context, attrs: Attri
     private val pushHandler = Handler()
     private var bubbles: MutableList<Bubble> = mutableListOf()
 
-    private var emissionDelayMillis = 10L * bubbles.size
+    private var emissionDelayMillis:Long = 10L * bubbles.size
+    private var canExplode: Boolean = true
 
     private val paintStroke = Paint().apply {
         isAntiAlias = true
@@ -76,7 +76,9 @@ class BubbleEmitterView @JvmOverloads constructor(context: Context, attrs: Attri
             if (!it.animating) {
                 it.animating = true
                 moveAnimation(it.uuid, it.radius).start()
-                explodeAnimation(it.uuid, it.radius).start()
+                if (canExplode) {
+                    explodeAnimation(it.uuid, it.radius).start()
+                }
                 fadeOutAnimation(it.uuid, it.radius).start()
             }
         }
@@ -116,6 +118,10 @@ class BubbleEmitterView @JvmOverloads constructor(context: Context, attrs: Attri
 
     fun setEmissionDelay(delayMillis: Long = 10L * bubbles.size) {
         emissionDelayMillis = delayMillis
+    }
+
+    fun canExplode(boolean: Boolean = true) {
+        canExplode = boolean
     }
 
     private fun moveAnimation(uuid: UUID, radius: Float): ValueAnimator {
