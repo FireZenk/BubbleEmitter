@@ -1,4 +1,4 @@
-# BubbleEmitter [![](https://jitpack.io/v/FireZenk/BubbleEmitter.svg)](https://jitpack.io/#FireZenk/BubbleEmitter) <a href="https://android-arsenal.com/api?level=16"><img src="https://img.shields.io/badge/API-19%2B-orange.svg?style=flat" alt="api"></a>
+# BubbleEmitter [![Jitpack](https://jitpack.io/v/FireZenk/BubbleEmitter.svg)](https://jitpack.io/#FireZenk/BubbleEmitter) <a href="https://android-arsenal.com/api?level=16"><img src="https://img.shields.io/badge/API-19%2B-orange.svg?style=flat" alt="api"></a> [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BubbleEmitter-green.svg?style=flat )]( https://android-arsenal.com/details/1/7757)
 
 Shows fancy animated bubbles as an Android view
 
